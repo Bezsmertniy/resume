@@ -1,0 +1,109 @@
+<div>
+    <main>
+        <section>
+            {{> title data="Js" big=true}}
+            <hr>
+            <div>{{name}}</div>
+            <p>({{description}})</p>
+            <div>
+                {{#each history}}
+                <div>{{this}}</div>
+                {{/each}}
+            </div>
+            <br>
+            <ul><b>types:</b>
+                {{#each types}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <br>
+            <b>syntax:</b>
+            <div>
+                {{#with syntax}}
+                <br>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        variables
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">var</a></li>
+                        <li><a class="dropdown-item" href="#">let</a></li>
+                        <li><a class="dropdown-item" href="#">const</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        functions
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">function</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        conditionals
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">if</a></li>
+                        <li><a class="dropdown-item" href="#">else</a></li>
+                        <li><a class="dropdown-item" href="#">switch</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        loops
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">for</a></li>
+                        <li><a class="dropdown-item" href="#">while</a></li>
+                        <li><a class="dropdown-item" href="#">do-while</a></li>
+                    </ul>
+                </div>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        classes
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">class</a></li>
+                    </ul>
+                </div>
+                {{/with}}
+            </div>
+            <br>
+            <ul><b>features:</b>
+                {{#each features}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <br>
+            <ul><b>libraries:</b>
+                {{#each libraries}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <br>
+            <ul><b>tools:</b>
+                {{#each tools}}
+                <li>{{this}}</li>
+                {{/each}}
+            </ul>
+            <br>
+            <b>community:</b>
+            <div>
+                {{#each community}}
+                <br>
+                <div>{{name}}<div>
+                <div>{{type}}</div>
+                {{/each}}
+            </div>
+
+        </section>
+    </main>
+
+
+</div>
