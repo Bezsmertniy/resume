@@ -1,5 +1,5 @@
-<main class="col-12">
-    <section>
+<main>
+    <section class="col-12">
         <div class="row">
             {{#with navigation}}
             <div class="col-6">
@@ -32,26 +32,50 @@
         </div>
     </section>
     <hr>
-    <div class="row g-3">
-        <div class="col-5">
+    <div class="col-12">
+        <div class="row g-2">
             {{#with city}}
             <h2>{{title}}</h2>
-            <div class="card text-bg-success">
+            {{#each cards}}
+            <div class="card col-5 text-bg-success">
+                <img class="card-img-top" src="https://picsum.photos/400/200" alt="{{alt}}">
+                <h6 class="card-title">{{title}}</h6>
+                <p>{{description}}</p>
+                {{#with button}}
                 <div>
-                    {{#each cards}}
-                    <img class="card-img-top" src="https://picsum.photos/400/200" alt="{{alt}}">
-                    <h6 class="card-title">{{title}}</h6>
-                    <p>{{description}}</p>
-                    {{#with button}}
-                    <div>
-                        <a href="{{href}}" class="btn btn-primary">{{text}}</a>
-                    </div>
-                    {{/with}}
-                    {{/each}}
+                    <a href="{{href}}" class="btn btn-primary">{{text}}</a>
                 </div>
+                {{/with}}
             </div>
+            {{/each}}
             {{/with}}
         </div>
-
     </div>
+    <hr>
+    <section>
+        {{#with winner}}
+        <h2>{{title}}</h2>
+        {{#with table}}
+        <table class="table table-striped table-bordered">
+            {{#with head}}
+            <thead>
+                <tr>
+                    <th>
+                        {{this}}
+                    </th>
+                </tr>
+            </thead>
+            {{/with}}
+            {{#each user}}
+            <tbody>
+                <tr>
+                    <th>{{this}}</th>
+
+                </tr>
+            </tbody>
+            {{/each}}
+        </table>
+        {{/with}}
+        {{/with}}
+    </section>
 </main>
