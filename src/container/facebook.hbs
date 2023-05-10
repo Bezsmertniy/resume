@@ -17,7 +17,7 @@
                 <div>gender: {{gender}}</div>
                 <div>age: {{age}}</div>
                 <div>
-                    {{#if mutual_friends}}<b>mutual friends:</b>
+                    <b>mutual friends:</b>
                     {{#each mutual_friends}}<br>
                     <div>id: {{id}}</div>
                     <div>name: {{name}}</div>
@@ -32,6 +32,7 @@
                     {{/each}}
                     {{/each}}
                     <br>
+                    {{#if groups}}
                     <h4>groups:</h4>
                     {{#each groups}}
                     <div>id: {{id}}</div>
@@ -53,26 +54,25 @@
                 {{/each}}
             </div>
             <br>
-            <div>
+            <div>{{#if groups}}
                 <h4>groups:</h4>
-                <div>{{#if groups}}
-                    {{#each groups}}
+
+                {{#each groups}}
+                <div>id: {{id}}</div>
+                <div>name: <b>{{name}}</b></div>
+                <div>description: ({{description}})</div>
+                <div>
+                    <b>members:</b>
+                    {{#each members}}
                     <div>id: {{id}}</div>
-                    <div>name: <b>{{name}}</b></div>
-                    <div>description: ({{description}})</div>
-                    <div>
-                        <b>members:</b>
-                        {{#each members}}
-                        <div>id: {{id}}</div>
-                        <div>name: {{name}}</div>
-                        <div>gender: {{gender}}</div>
-                        <div>age: {{age}}</div>
-                        <br>
-                        {{/each}}
-                    </div>
+                    <div>name: {{name}}</div>
+                    <div>gender: {{gender}}</div>
+                    <div>age: {{age}}</div>
+                    <br>
                     {{/each}}
-                    {{/if}}
                 </div>
+                {{/each}}
+                {{/if}}
             </div>
             {{/each}}
         </div>
