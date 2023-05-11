@@ -172,41 +172,41 @@
     <section>
         {{#with footer}}
         <h5>{{title}}</h5>
-        <div class="btn-group text-center">
-            <div class="row">
-                <ul class="nav nav-tabs">
-                    <div>
-                        {{#each navigation}}
-                        <div class="col-3">
-                            <li class="nav-item">
-                                <a href="{{href}}" class="btn btn-link">{{text}}</a>
-                            </li><br>
+        <div class="row">
+            <div class="btn-group text-center">
+                <div class="row">
+                    <ul class="nav nav-tabs">
+                        <div>
+                            {{#each navigation}}
+                            <div>
+                                <li class="nav-item col-3">
+                                    <a href="{{href}}" class="btn btn-link">{{text}}</a>
+                                </li><br>
+                            </div>
+                            {{/each}}
                         </div>
-                        {{/each}}
-                    </div>
-                    <div>
-                        {{#each socialMedia}}
-                        <div class="col-3">
-                            <li class="nav-item">
-                                <a href="{{link}}" class="btn btn-outline-dark">{{name}}</a>
-                            </li><br>
+                        <div>
+                            {{#each socialMedia}}
+                            <div>
+                                <li class="nav-item col-3">
+                                    <a href="{{link}}" class="btn btn-outline-dark">{{name}}</a>
+                                </li><br>
+                            </div>
+                            {{/each}}
                         </div>
-                        {{/each}}
-                    </div>
-                    <div>
-                        {{#each partners}}
-                        <div class="col-3">
-                            <li class="nav-item">
-                                <a href="{{link}}" class="btn btn-outline-info">{{name}}</a>
-                            </li><br>
+                        <div>
+                            {{#each partners}}
+                            <div>
+                                <li class="nav-item col-3">
+                                    <a href="{{link}}" class="btn btn-outline-info">{{name}}</a>
+                                </li><br>
+                            </div>
+                            {{/each}}
                         </div>
-                        {{/each}}
-                    </div>
-                </ul>
+                    </ul>
+                </div>
             </div>
-
         </div>
-
         {{/with}}
     </section>
 </main>
