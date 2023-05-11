@@ -126,10 +126,10 @@
     </section>
     <hr>
     <section>
-        <div class="card text-center">
-            <div class="row">
-                {{#each rest.cards}}
-                <div class="col-6">
+        <div class="row">
+            {{#each rest.cards}}
+            <div class="col-6 ">
+                <div class="card text-center gx-2 gy-4">
                     <div class="card-header">
                         {{header}}
                     </div>
@@ -142,8 +142,71 @@
                         {{footer}}
                     </div>
                 </div>
-                {{/each}}
             </div>
+            {{/each}}
         </div>
+        </div>
+    </section>
+    <hr>
+    <section>
+        {{#with proposition}}
+        <div class="display-2">{{title}}</div>
+        <div class="row gx-2 gy-4">
+            {{#each card}}
+            <div class="col-5">
+                <div class="card text-bg-warning">
+                    <div class="card-header">
+                        {{header}}
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-title">{{title}}</h5>
+                        {{description}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+        {{/with}}
+    </section>
+    <hr>
+    <section>
+        {{#with footer}}
+        <h5>{{title}}</h5>
+        <div class="btn-group text-center">
+            <div class="row">
+                <ul class="nav nav-tabs">
+                    <div>
+                        {{#each navigation}}
+                        <div class="col-3">
+                            <li class="nav-item">
+                                <a href="{{href}}" class="btn btn-link">{{text}}</a>
+                            </li><br>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div>
+                        {{#each socialMedia}}
+                        <div class="col-3">
+                            <li class="nav-item">
+                                <a href="{{link}}" class="btn btn-outline-dark">{{name}}</a>
+                            </li><br>
+                        </div>
+                        {{/each}}
+                    </div>
+                    <div>
+                        {{#each partners}}
+                        <div class="col-3">
+                            <li class="nav-item">
+                                <a href="{{link}}" class="btn btn-outline-info">{{name}}</a>
+                            </li><br>
+                        </div>
+                        {{/each}}
+                    </div>
+                </ul>
+            </div>
+
+        </div>
+
+        {{/with}}
     </section>
 </main>
