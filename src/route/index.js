@@ -2764,7 +2764,7 @@ router.get('/shopcatalog', function (req, res) {
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('shopcatalog', {
-    // layout: 'shop',
+    layout: 'shop',
     navigation: {
       links: [
         {
@@ -2833,8 +2833,8 @@ router.get('/shopcatalog', function (req, res) {
       price: {
         title: 'Ціна',
         range: {
-          from: '8 000',
-          to: '30 000',
+          from: '8000',
+          to: '30000',
         },
         button: {
           text: 'OK',
@@ -2844,8 +2844,8 @@ router.get('/shopcatalog', function (req, res) {
 
       filterList: [
         {
-          title: 'Готов к отправке',
-          options: [{ value: 'Готов к отправке' }],
+          title: 'готовий до відправки',
+          options: [{ value: 'готовий до відправки' }],
         },
         {
           title: 'Процесор',
