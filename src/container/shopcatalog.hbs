@@ -1,0 +1,247 @@
+<main class="p-5">
+    <header class="row mt-3">
+        <div class="col-12">
+            {{#with navigation}}
+            <div class="card">
+                <div class="card-body m-1">
+                    <ul class="nav">
+                        {{#each links}}
+                        <li class="nav-item">
+                            <a href="{{href}}" class="nav-link {{#if @last}}disabled{{/if}}">{{text}}</a>
+                            {{/each}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            {{/with}}
+        </div>
+    </header>
+
+    <body>
+        <section>
+            {{!-- Головна... --}}
+            <div class="mt-4">
+                {{#with breadcrumb}}
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        {{#each this}}
+                        <li class="breadcrumb-item active" aria-current="page"><a href="{{url}}"
+                                class="breadcrumbs__link">{{name}}</a>
+                        </li>
+                        {{/each}}
+                    </ol>
+                </nav>
+                {{/with}}
+            </div>
+        </section>
+        {{!-- Ноутбуки--}}
+        <section class="mt-5 mb-2">
+            <h1>{{header}}</h1>
+        </section>
+        {{!-- За ціною --}}
+        <section class="mt-5">
+            <div class="row">
+                {{#with sortBlock}}
+                {{#each this}}
+                <div class="col-3">
+                    <select class="form-select form-select-lg">
+                        <option selected>{{placeholder}}</option>
+                        {{#each options}}
+                        <option value="{{value}}">{{text}}</option>
+                        {{/each}}
+                    </select>
+                </div>
+                {{/each}}
+                {{/with}}
+            </div>
+        </section>
+        <div class="row mt-5">
+            {{!-- Ліва панель --}}
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        <div>
+                            {{#with filterBlock}}
+                            {{!-- Продавець --}}
+                            <h6 class="card-title">{{sellers.title}}</h6>
+                            <div class="ms-3">
+                                {{#each sellers.list}}
+                                <div class="form-check my-2">
+                                    <input class="form-check-input" type="checkbox" value="{{this}}"
+                                        id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        {{value}}
+                                    </label>
+                                </div>
+                                {{/each}}
+                            </div>
+                            <div class="mt-2 mx-2">
+                                <hr>
+                            </div>
+                            {{!-- Бренд--}}
+                            <div class="m-3">
+                                {{#with brands}}
+                                <h6 class="card-title">{{title}}</h6>
+                                <div class="me-3 mb-2">
+                                    {{#with input}}
+                                    <label for="#" class="form-label"></label>
+                                    <input class="form-control" placeholder={{placeholder}}>
+                                    {{/with}}
+                                </div>
+                                <div class="mt-2">
+                                    {{#each options}}
+                                    <div class="form-check my-2">
+                                        <input class="form-check-input" type="checkbox" value="{{this}}"
+                                            id="flexCheckDefault">
+                                        <label class="form-check-label" for="flexCheckDefault">
+                                            {{value}}
+                                        </label>
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                {{/with}}
+                            </div>
+                            <div class="my-2 mx-2">
+                                <hr>
+                            </div>
+                            {{!-- Ціна--}}
+                            <div class="m-3">
+                                {{#with price}}
+                                <h6 class="card-title">{{title}}</h6>
+                                <div class="me-3 mb-2">
+                                    {{#each range}}
+                                    <label for="#" class="form-label"></label>
+                                    <input class="form-control" placeholder={{this}}>
+                                    {{/each}}
+                                </div>
+                                <div class="mt-3">
+                                    {{#with button}}
+                                    <a href="{{link}}" class="btn btn-outline-dark">{{text}}</a>
+                                    {{/with}}
+                                </div>
+                                {{/with}}
+                            </div>
+                            {{!--готовий до відправки--}}
+                            <div>
+                                {{#with filterList}}
+                                {{#each this}}
+                                <div>
+                                    <hr>
+                                    <div class="form-label my-3">{{title}}</div>
+                                    {{#each options}}
+                                    <div class="form-check my-2">
+                                        <label class="form-check-label">{{value}}</label>
+                                        <input name="#" type="checkbox" class="form-check-input">
+                                    </div>
+                                    {{/each}}
+                                </div>
+                                {{/each}}
+                                {{/with}}
+                            </div>
+                            {{/with}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {{!-- Права панель --}}
+            <div class="col-8">
+                {{#with goodsList}}
+                <div class="row">
+                    {{#each this}}
+                    <div class="col-6 g-3">
+                        <div class="card">
+                            <img src="{{img}}" class="card-img-top" alt="img">
+                            <div class="card-body">
+                                {{!-- Кнопки Нот і Нове --}}
+                                <div class="mt-3 mx-2">
+                                    {{#if isHot}}
+                                    <button class="btn btn-sm btn-success rounded-pill">Top</button>
+                                    {{/if}}
+                                    {{#if isNew}}
+                                    <button class="btn btn-sm btn-danger rounded-pill">New</button>
+                                    {{/if}}
+                                </div>
+                                {{!-- Кнопки швид. дост. і безк. дос.--}}
+                                <div class="my-3">
+                                    {{#if isFast}}
+                                    <button class="btn btn-sm btn-secondary">Швидка доставка</button>
+                                    {{/if}}
+                                </div>
+                                <div class="my-3">
+                                    {{#if isFree}}
+                                    <button class="btn btn-sm btn-success">Безкоштовна доставка</button>
+                                    {{/if}}
+                                </div>
+                                <h5>{{name}}</h5>
+                                <div>
+                                    {{#with review}}
+                                    {{amount}} {{text}}
+                                    {{/with}}
+                                </div>
+                                <h5 class="my-2">{{price}}</h5>
+                                <p class="mb-2">{{delivery}}</p>
+                                {{!-- Кнопки купити --}}
+                                {{#each buttons}}
+                                <div class="mt-1">
+                                    {{#if isPrimary}}
+                                    <a href="{{link}}" class="btn btn-primary">{{text}}</a>
+                                    {{/if}}
+                                </div>
+                                <div class="my-2">
+                                    {{#if isSecondary}}
+                                    <a href="{{link}}" class="btn btn-secondary">{{text}}</a>
+                                    {{/if}}
+                                </div>
+                                {{/each}}
+                                {{!-- Список --}}
+                                <ul>
+                                    {{#each characteristics}}
+                                    <li>{{title}}: {{value}}</li>
+                                    {{/each}}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </div>
+        {{!-- Зелена картка --}}
+        <section class="mt-5">
+            <div class="card alert alert-success">
+                {{#with service}}
+                <div class="text-center text-light">
+                    <h2>{{title}}</h2>
+                    <p class="my-3">{{description}}</p>
+                    {{#each buttons}}
+                    <div class="btn btn-primary col-2 my-1">
+                        <a href="{{link}}" class="nav-link">{{text}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+                {{/with}}
+            </div>
+        </section>
+    </body>
+    <div class="col-12 mt-5">
+        <hr>
+    </div>
+    <footer>
+        <div class="row">
+            {{#each footer}}
+            <div class="col-2 list-group">
+                <ul class="nav flex-column">
+                    {{#each this}}
+                    <li class="nav-item my-1">
+                        <a href="{{link}}" class="nav-link {{#if @last}}disabled{{/if}} list-item" target="_blank">
+                            {{text}}
+                        </a>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+            {{/each}}
+        </div>
+    </footer>
+</main>
