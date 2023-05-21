@@ -43,7 +43,59 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    page: {
+      title: 'My Resume',
+    },
+
+    layout: 'index',
+    navbuttons: {
+      project: [
+        {
+          href: '/js',
+          name: 'Js',
+        },
+        {
+          href: '/mac',
+          name: 'Mac',
+        },
+        {
+          href: '/person',
+          name: 'Person',
+        },
+        {
+          href: '/bio',
+          name: 'Bio',
+        },
+        {
+          href: '/program',
+          name: 'Program',
+        },
+        {
+          href: '/web',
+          name: 'Web',
+        },
+      ],
+      links: [
+        {
+          href: '/skills',
+          name: 'Skills',
+        },
+        {
+          href: '/summary',
+          name: 'Summary',
+        },
+        {
+          href: '/education',
+          name: 'Education',
+        },
+        {
+          href: '/work',
+          name: 'Work',
+        },
+      ],
+    },
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 
@@ -3130,47 +3182,5 @@ router.get('/shopcatalog', function (req, res) {
 
 // ================================================================
 // router.get Створює нам один ентпоїнт
-
-//           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/index8', function (req, res) {
-  // res.render генерує нам HTML сторінку
-
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index8', {
-    layout: 'index',
-    navbuttons: {
-      project: [
-        {
-          href: '/js',
-          name: 'Js',
-        },
-        {
-          href: '/mac',
-          name: 'Mac',
-        },
-        {
-          href: '/person',
-          name: 'Person',
-        },
-        {
-          href: '/bio',
-          name: 'Bio',
-        },
-        {
-          href: '/program',
-          name: 'Program',
-        },
-        {
-          href: '/web',
-          name: 'Web',
-        },
-      ],
-    },
-  })
-  //                  ↑↑ сюди вводимо JSON дані
-})
-// Підключаємо роутер до бек-енду
-
-// ================================================================
 
 module.exports = router
