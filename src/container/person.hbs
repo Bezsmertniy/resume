@@ -1,20 +1,15 @@
-{{!--
-Це код container файлу для summary сторінки,
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
---}}
-
-<header>
-    <section>
+<main class="p-5">
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center">{{> title data="Person" big=true}}</div>
+        </div>
+    </div>
+    <header class="mt-3">
         {{#with person}}
-        {{> title data="Person" big=true}}
-        <br>
-        <div>{{name}}</div>
-        <br>
-        <div>{{age}}</div>
-        <br>
-        <div>{{gender}}</div>
-        <br>
-        <address>
+        <h5>{{name}}</h5>
+        <div class="ms-1">{{age}}</div>
+        <div class="mt-2 ms-2">{{gender}}</div>
+        <address class="mt-2" style="color:black">
             <div>{{address.street}}</div>
             <div>{{address.city}}</div>
             <div>{{address.state}}</div>
@@ -23,134 +18,119 @@
         </address>
         {{/with}}
         <hr>
-    </section>
-</header>
+    </header>
 
-<body>
-    <div>
-        {{#with person}}
-        {{> title data="Education" big=false}}
-        <div>
-            {{#each education}}
-            <div>{{degree}}</div>
-            <br>
-            <div>{{major}}</div>
-            <br>
-            <div>{{university}}</div>
-            <br>
-            <div>{{graduationYear}}</div>
-            <br>
-            {{/each}}
-        </div>
-
-        <hr>
-        {{> title data="Work" big=folse}}
-        <br>
-        <div>
-            {{#each workExperience}}
-            <div>{{company}}</div>
-            <br>
-            <div>{{title}}</div>
-            <br>
-            <div>{{startDate}} - {{endDate}}</div>
-            <br>
-            <div>{{responsibilities}}</div>
-            <br>
-            <hr>
-            {{> title data="About the company" big=folse}}
-            <div>year_founded - {{year_founded}}</div>
-            <br>
-            <div>{{industry}}</div>
-            <br>
-            <br>
-            <div>
-                <strong>
-                    Employees
-                </strong>
+    <body>
+        <div class="mt-3">
+            {{#with person}}
+            {{> title data="Education" big=false}}
+            <div class="ms-2">
+                {{#each education}}
+                <div>{{degree}}</div>
+                <div class="my-2">{{major}}</div>
+                <div>{{university}}</div>
+                <div class="my-2">{{graduationYear}}</div>
+                {{/each}}
             </div>
-            <div>{{#each employees}}
-                <div>{{name}}</div>
-                <br>
-                <div>{{position}}</div>
-                <br>
-                <div>{{department}}</div>
-                <br>
-                <div>
+            <div class="my-3">
+                <hr>
+            </div class="mt-3">
+            {{> title data="Work" big=folse}}
+            <div class="ms-2">
+                {{#each workExperience}}
+                <div>{{company}}</div>
+                <div class="my-2">{{title}}</div>
+                <div>{{startDate}} - {{endDate}}</div>
+                <div class="my-2">{{responsibilities}}</div>
+                <div class="my-3">
+                    <hr>
+                </div>
+                {{> title data="About the company" big=folse}}
+                <div class="mb-2">year_founded - {{year_founded}}</div>
+                <div class="my-2">{{industry}}</div>
+                <div class="ms-2 mb-2">
                     <strong>
-                        Projects
+                        Employees
                     </strong>
                 </div>
-                <div>
-                    {{#each projects}}
+                <div>{{#each employees}}
                     <div>{{name}}</div>
-                    <br>
-                    <div>{{description}}</div>
-                    <br>
-                    <div>{{status}}</div>
-                    <br>
-                    <div>
-                        <em>
-                            Teams
-                        </em>
+                    <div class="my-2">{{position}}</div>
+                    <div>{{department}}</div>
+                    <div class="ms-2 my-2">
+                        <strong>
+                            Projects
+                        </strong>
                     </div>
                     <div>
-                        {{#each teams}}
-                        <div>{{team_name}}</div>
-                        <br>
-                        <div>
-                            <em>
-                                Team leader
-                            </em>
-                        </div>
-                        <br>
-                        <div>
-                            {{team_leader.name}}
-                        </div>
-                        <div>
-                            {{team_leader.title}}
-                        </div>
-                        <div>
-                            {{team_leader.email}}
-                        </div>
-                        <br>
-                        <div>
-                            <em>
-                                Team members
-                            </em>
-                        </div>
-                        <br>
-                        <div>
-                            {{#each team_members}}
-                            <div>{{name}}</div>
-                            <div>{{title}}</div>
-                            <div>{{email}}</div>
-                            <div>{{skills}}</div>
-                            <br>
-                            <div>
-                                <em>
-                                    Projects
-                                </em>
+                        {{#each projects}}
+                        <div>{{name}}</div>
+                        <div class="my-2">{{description}}</div>
+                        <div>{{status}}</div>
+                        <div class="row mt-3">
+                            <div class="col-3">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <h5 class="text-center">
+                                            Teams
+                                        </h5>
+                                        <div class="ms-3">
+                                            {{#each teams}}
+                                            <div class="my-2">{{team_name}}</div>
+                                            <div class="text-center mb-2">
+                                                <em>
+                                                    Team leader
+                                                </em>
+                                            </div>
+                                            <div>
+                                                {{team_leader.name}}
+                                            </div>
+                                            <div class="my-2">
+                                                {{team_leader.title}}
+                                            </div>
+                                            <div>
+                                                {{team_leader.email}}
+                                            </div>
+                                            <div class="text-center my-2">
+                                                <em>
+                                                    Team members
+                                                </em>
+                                            </div>
+                                            <div>
+                                                {{#each team_members}}
+                                                <div class="ms-1">{{name}}</div>
+                                                <div class="my-2 ms-2">{{title}}</div>
+                                                <div class="ms-3">{{email}}</div>
+                                                <div class="my-2 ms-4">{{skills}}</div>
+                                                <div class="text-center my-2">
+                                                    <em>
+                                                        Projects
+                                                    </em>
+                                                </div>
+                                                <div>
+                                                    {{#each projects}}
+                                                    <div class="ms-1">{{name}}</div>
+                                                    <div class="my-2 ms-2">{{description}}</div>
+                                                    <div class="ms-3">{{technologies}}</div>
+                                                    <div class="my-3">
+                                                        <p>Team members</p>
+                                                    </div>
+                                                    <div>
+                                                        {{#each team_members}}
+                                                        <div class="ms-1 my-2">{{name1}}</div>
+                                                        <div class="ms-2">{{title1}}</div>
+                                                        <div class="ms-1 my-2">{{name2}}</div>
+                                                        <div class="ms-2">{{title2}}</div>
+                                                        {{/each}}
+                                                    </div>
+                                                    {{/each}}
+                                                </div>{{/each}}
+                                            </div>
+                                            {{/each}}
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                            <div>
-                                {{#each projects}}
-                                <br>
-                                <div>{{name}}</div>
-                                <div>{{description}}</div>
-                                <div>{{technologies}}</div>
-                                <div>
-                                    <p>Team members</p>
-                                </div>
-                                <div>
-                                    {{#each team_members}}
-                                    <div>{{name1}}</div>
-                                    <div>{{title1}}</div>
-                                    <br>
-                                    <div>{{name2}}</div>
-                                    <div>{{title2}}</div>
-                                    {{/each}}
-                                </div>
-                                {{/each}}
-                            </div>{{/each}}
                         </div>
                         {{/each}}
                     </div>
@@ -158,17 +138,7 @@
                 </div>
                 {{/each}}
             </div>
-            {{/each}}
+            {{/with}}
         </div>
-        {{/with}}
-
-
-
-    </div>
-    </div>
-</body>
-
-{{!--
-Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
-Адже наш layout/default.hbs має вже структуру HTML
---}}
+    </body>
+</main>

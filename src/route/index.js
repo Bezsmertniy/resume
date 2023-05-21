@@ -274,9 +274,6 @@ router.get('/person', function (req, res) {
 
     layout: 'person',
 
-    page: {
-      title: 'Resume | Person',
-    },
     person: {
       name: 'Emma Johnson',
       age: 32,
@@ -479,7 +476,7 @@ router.get('/program', function (req, res) {
 
     program: {
       excursion: {
-        name_1: 'Cultural Tour',
+        name: 'Cultural Tour',
         location_1: {
           city: 'Paris',
           country: 'France',
@@ -3130,6 +3127,49 @@ router.get('/shopcatalog', function (req, res) {
   })
   //                  ↑↑ сюди вводимо JSON дані
 })
+
+// ================================================================
+// router.get Створює нам один ентпоїнт
+
+//           ↙ тут вводимо шлях (PATH) до сторінки
+router.get('/index8', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'index',
+    navbuttons: {
+      project: [
+        {
+          href: '/js',
+          name: 'Js',
+        },
+        {
+          href: '/mac',
+          name: 'Mac',
+        },
+        {
+          href: '/person',
+          name: 'Person',
+        },
+        {
+          href: '/bio',
+          name: 'Bio',
+        },
+        {
+          href: '/program',
+          name: 'Program',
+        },
+        {
+          href: '/web',
+          name: 'Web',
+        },
+      ],
+    },
+  })
+  //                  ↑↑ сюди вводимо JSON дані
+})
+// Підключаємо роутер до бек-енду
 
 // ================================================================
 

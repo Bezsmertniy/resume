@@ -1,38 +1,40 @@
-<div>
+<main class="p-5">
     {{#with program}}
-    <h1>Excursion</h1>
+    <h1 class="text-center">Excursion</h1>
     <div>
         {{#with excursion}}
-        <h2>{{name1}}</h2>
-        <div>{{location_1.city}}</div>
-        <div>{{location_1.country}}</div>
-        <div>{{date}}</div>
-        <hr>
+        <div class="ms-3 mt-5">
+            <h2 class="ms-3">{{name}}</h2>
+            <div>{{location_1.city}}</div>
+            <div class="my-2">{{location_1.country}}</div>
+            <div>{{date}}</div>
+        </div>
+        <div class="my-3">
+            <hr>
+        </div>
         <h3>Program</h3>
-        <div>
+        <div class="ms-2">
             {{#each program}}
             <div>{{name}}</div>
-            <div>{{type}}</div>
+            <div class="my-2">{{type}}</div>
             <div>duration - {{duration}}</div>
-            <br>
-            <b>details</b>
-            <br>
+            <div class="my-3">
+                <b>details:</b>
+            </div>
             <div>
                 {{#with details}}
-                <div>
+                <div class="ms-2">
                     {{#with museum}}
-                    <div>{{name}}</div>
+                    <div class="my-2">{{name}}</div>
                     <div>{{location.address}}</div>
-                    <div> {{location.city}}</div>
+                    <div class="my-2"> {{location.city}}</div>
                     <div> {{location.country}}</div>
-                    <br>
-                    <h4>exhibits:</h4>
-                    <div>
+                    <h4 class="my-3">exhibits:</h4>
+                    <div class="ms-2">
                         {{#each exhibits}}
-
-                        <div>{{name}}</div>
+                        <h6 class="my-2">{{name}}</h6>
                         <div>{{artist}}</div>
-                        <div>({{description}})</div>
+                        <div class="my-2">({{description}})</div>
                         {{#if audio_guide}}<p>*audio guide</p>{{/if}}
                         {{/each}}
                     </div>
@@ -41,33 +43,32 @@
                 <div>
                     {{#with venue}}
                     <div>{{name}}</div>
-                    <div>{{location.address}}</div>
+                    <div class="my-2">{{location.address}}</div>
                     <div> {{location.city}}</div>
-                    <div> {{location.country}}</div>
-                    <br>
+                    <div class="my-2"> {{location.country}}</div>
                     <b>performers:</b>
                     <div>
                         {{#each ../performers}}
-                        <br>
-                        <div>{{name}}</div>
-                        <div>{{type}}</div>
+                        <div class="mt-2">{{name}}</div>
+                        <div class="my-2">{{type}}</div>
                         {{/each}}
                     </div>
                     {{/with}}
                 </div>
-                <h4>guide:</h4>
-                <div>
+                <h4 class="mt-3 ms-2">guide:</h4>
+                <div class="my-4">
                     ({{#each guide}}
                     {{this}}
                     {{/each}})
                 </div>
                 {{/with}}
             </div>
-            <hr>
-            <br>
+            <div class="my-3">
+                <hr>
+            </div>
             {{/each}}
         </div>
         {{/with}}
     </div>
     {{/with}}
-</div>
+</main>
