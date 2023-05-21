@@ -1,60 +1,58 @@
-<h1>Web</h1>
-<br>
-<h2>Languages</h2>
-<hr>
-<div>
-    {{#with web}}
+<main class="p-5">
+    <h1 class="text-center">Web</h1>
+    <h2 class="my-3 ms-4">Languages</h2>
+    <div class="my-3">
+        <hr>
+    </div>
     <div>
-        {{#each languages}}
-        <h3>{{name}}</h3>
-        <div>{{version}}</div>
-        <div>({{description}})</div>
-        <br>
-        <ul>
-            <div>
+        {{#with web}}
+        <div class="ms-2">
+            {{#each languages}}
+            <h3 class="mt-3">{{name}}</h3>
+            <div class="my-2">{{version}}</div>
+            <div>({{description}})</div>
+            <ul class="mt-3">
                 {{#each elements}}
                 <li>
-                    <div>{{name}}</div>
-                    <div>({{description}})</div>
-                    <div>attributes:
+                    <h6>{{name}}</h6>
+                    <div class="my-3">({{description}})</div>
+                    <div class="ms-2">attributes:
                         {{#each attributes}}
-                        <div>{{name}}</div>
-                        <div>({{description}})</div>
+                        <div class="my-2">{{name}}</div>
+                        <div class="ms-3">({{description}})</div>
                         {{/each}}
                     </div>
-                    <br>
                 </li>
                 {{/each}}
-            </div>
-        </ul>
-        <div>
-            {{#each properties}}
-            <b>{{name}}</b>
-            <div>({{description}})</div>
-            <div>values:
-                {{#each values}}
-                <div>{{value}}</div>
-                <div>({{description}})</div>
+            </ul>
+            <div class="mt-4 mb-3">
+                {{#each properties}}
+                <b>{{name}}</b>
+                <div class="my-2 ms-2">({{description}})</div>
+                <div class="my-3">values:
+                    {{#each values}}
+                    <div class="ms-2 my-2">{{value}}</div>
+                    <div class="ms-3">({{description}})</div>
+                    {{/each}}
+                </div>
                 {{/each}}
             </div>
-            <br>
-            {{/each}}
-        </div>
-        <div>
-            {{#each functions}}
-            <br>
-            <b>{{name}}</b>
-            <div>({{description}})</div>
-            <div>parameters:
-                {{#each parameters}}
-                <div>{{parameters}}</div>
-                <div>{{type}}</div>
-                <div>({{description}})</div>
+            <div class="ms-2">
+                {{#each functions}}
+                <h5 class="my-4">{{name}}</h5>
+                <div class="my-2 ms-2">({{description}})</div>
+                <div class="ms-3">
+                    <h6>parameters:</h6>
+                    {{#each parameters}}
+                    <div class="ms-1">{{parameters}}</div>
+                    <div class="ms-2 my-2">{{type}}</div>
+                    <div class="ms-3">({{description}})</div>
+                    {{/each}}
+                </div>
                 {{/each}}
             </div>
             {{/each}}
         </div>
-        {{/each}}
+        {{/with}}
     </div>
-    {{/with}}
-</div>
+</main>

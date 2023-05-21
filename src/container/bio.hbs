@@ -1,104 +1,90 @@
-gi
+<main class="p-5">
 
-<head>
-    <section>
-        <h1>{{name}}</h1>
-        <div>{{birthdate}} - {{deathdate}}</div>
-        <br>
-        <div>birthplace: {{birthplace}}</div>
-        <div>deathplace: {{deathplace}}</div>
-        <br>
-        <div>nationality: {{nationality}}</div>
-        <br>
-        <div>occupation: {{occupation}}</div>
-        <br>
-        <div>known_for:
-            <ul>
+    <head>
+        <h1 class="text-center mt-2 mb-5">{{name}}</h1>
+        <b class="my-2">
+            <div>{{birthdate}} - {{deathdate}}</div>
+        </b>
+        <div class="my-2 ms-2">birthplace: {{birthplace}}</div>
+        <div class="ms-2">deathplace: {{deathplace}}</div>
+        <div class="my-2 ms-2">nationality: {{nationality}}</div>
+        <div class="ms-2">occupation: {{occupation}}</div>
+        <div class="mt-3">known_for:
+            <ul class="my-2">
                 {{#each known_for}}
                 <li>{{this}}</li>
                 {{/each}}
             </ul>
         </div>
-    </section>
-</head>
-<hr>
+    </head>
+    <div class="my-3">
+        <hr>
+    </div>
 
-<body>
-    <h2>Education:</h2>
-    <div>
-        {{#each education}}
-        <div>{{degree}}</div>
-        <div>{{field}}</div>
-        <div>{{institution}}</div>
-        <div>{{year}}</div>
-        {{/each}}
-    </div>
-    <br>
-    <h3>Notable_publications</h3>
-    <div>
-        {{#each notable_publications}}
-        <div>{{title}}</div>
-        <div>{{year}}</div>
-        <div>{{publisher}}</div>
-        <br>
-        {{/each}}
-    </div>
-    <br>
-    <h3>Partners</h3>
-    <div>
-        {{#each partners}}
-        <div>{{name}}</div>
-        <div>{{relationship}}</div>
-        <div>{{years}}</div>
-        <br>
-        {{/each}}
-    </div>
-    <br>
-    <h3>Awards</h3>
-    <div>
-        {{#each awards}}
-        <div>{{title}}</div>
-        <div></div>{{year}}
-    </div>
-    <div></div>{{description}}</div>
-    {{/each}}
-    </div>
-    <br>
-    <h3>Influences</h3>
-    <ul>
-        {{#each influences}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <br>
-    <h3>Influenced</h3>
-    <ul>
-        {{#each influenced}}
-        <li>{{this}}</li>
-        {{/each}}
-    </ul>
-    <br>
-    <h3>Quotes</h3>
-    <ul>
-        {{#each quotes}}
-        <li><q>{{this}}</q></li>
-        {{/each}}
-    </ul>
-    <br>
-    <h3>Major discoveries</h3>
-    <div>
-        {{#each major_discoveries}}
-        <div>{{title}}</div>
-        <div>{{year}}</div>
-        <p>({{description}})</p>
-        <br>
-        {{/each}}
-    </div>
-    <br>
-    <h3>Contributions</h3>
-    <div>{{contributions.title}}</div>
-    <p>({{contributions.description}})</p>
-    <div>{{contributions.year}}</div>
-    <div>{{contributions.field}}</div>
-
-</body>
+    <body>
+        <h2 class="my-2">Education:</h2>
+        <div class="ms-3">
+            {{#each education}}
+            <div>{{degree}}</div>
+            <div class="my-2">{{field}}</div>
+            <div>{{institution}}</div>
+            <div class="my-2">{{year}}</div>
+            {{/each}}
+        </div>
+        <h3 class="mt-4 mb-3">Notable_publications</h3>
+        <div class="ms-3">
+            {{#each notable_publications}}
+            <div class="mt-4">{{title}}</div>
+            <div class="my-1">{{year}}</div>
+            <div>{{publisher}}</div>
+            {{/each}}
+        </div>
+        <h3 class="mt-4 mb-3">Partners</h3>
+        <div class="ms-2">
+            {{#each partners}}
+            <div class="mt-4">{{name}}</div>
+            <div class="my-1">{{relationship}}</div>
+            <div>{{years}}</div>
+            {{/each}}
+        </div>
+        <h3 class="mt-4 mb-3">Awards</h3>
+        <div class="ms-2">
+            {{#each awards}}
+            <div class="mt-4">{{title}}</div>
+            <div class="my-1">{{year}}</div>
+            <div>{{description}}</div>
+            {{/each}}
+        </div>
+        <h3 class="mt-4 mb-3">Influences</h3>
+        <ul class="ms-2">
+            {{#each influences}}
+            <li class="my-2">{{this}}</li>
+            {{/each}}
+        </ul>
+        <h3 class="mt-4 mb-3">Influenced</h3>
+        <ul class="ms-2">
+            {{#each influenced}}
+            <li class="my-2">{{this}}</li>
+            {{/each}}
+        </ul>
+        <h3 class="mt-4 mb-3">Quotes</h3>
+        <ul class="ms-2">
+            {{#each quotes}}
+            <li class="my-2"><q>{{this}}</q></li>
+            {{/each}}
+        </ul>
+        <h3 class="mt-4 mb-3">Major discoveries</h3>
+        <div class="ms-2">
+            {{#each major_discoveries}}
+            <div class="mt-4">{{title}}</div>
+            <div class="my-1">{{year}}</div>
+            <p>({{description}})</p>
+            {{/each}}
+        </div>
+        <h3 class="mt-4 mb-3">Contributions</h3>
+        <div class="my-2 ms-3">{{contributions.title}}</div>
+        <p>({{contributions.description}})</p>
+        <div>{{contributions.year}}</div>
+        <div class="my-2">{{contributions.field}}</div>
+    </body>
+</main>
