@@ -64,6 +64,10 @@ router.get('/', function (req, res) {
           name: 'Person',
         },
         {
+          href: '/facebook',
+          name: 'Facebook',
+        },
+        {
           href: '/bio',
           name: 'Bio',
         },
@@ -92,6 +96,42 @@ router.get('/', function (req, res) {
         {
           href: '/work',
           name: 'Work',
+        },
+      ],
+      shops: [
+        {
+          href: '/shopcart',
+          name: 'Shopcart',
+        },
+        {
+          href: '/shopcatalog',
+          name: 'Shopcatalog',
+        },
+        {
+          href: '/shophome',
+          name: 'Shophome',
+        },
+        {
+          href: '/shoporder',
+          name: 'Shoporder',
+        },
+        {
+          href: '/shopreview',
+          name: 'Shopreview',
+        },
+      ],
+      tasks: [
+        {
+          href: '/task21',
+          name: 'Task21',
+        },
+        {
+          href: '/task22',
+          name: 'Task22',
+        },
+        {
+          href: '/task31',
+          name: 'Task31',
         },
       ],
     },
