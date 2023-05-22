@@ -18,6 +18,18 @@
             {{#with navbuttons}}
             <div class="btn-group-vertikal" role="group" aria-label="Vertical button group">
                 <div class="row">
+                    {{#each links}}
+                    <div class="my-2">
+                        <a href="{{href}}" class="btn btn-primary">{{name}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="mt-4 ms-3 mb-2">
+                <h4>Pages project</h4>
+            </div>
+            <div class="btn-group-vertikal" role="group" aria-label="Vertical button group">
+                <div class="row">
                     {{#each project}}
                     <div class="my-2">
                         <a href="{{href}}" class="btn btn-primary">{{name}}</a>
@@ -26,11 +38,23 @@
                 </div>
             </div>
             <div class="mt-4 ms-3 mb-2">
-                <h4>Page links</h4>
+                <h4>Pages shop</h4>
             </div>
             <div class="btn-group-vertikal" role="group" aria-label="Vertical button group">
                 <div class="row">
-                    {{#each links}}
+                    {{#each shops}}
+                    <div class="my-2">
+                        <a href="{{href}}" class="btn btn-primary">{{name}}</a>
+                    </div>
+                    {{/each}}
+                </div>
+            </div>
+            <div class="mt-4 ms-3 mb-2">
+                <h4>Pages task</h4>
+            </div>
+            <div class="btn-group-vertikal" role="group" aria-label="Vertical button group">
+                <div class="row">
+                    {{#each tasks}}
                     <div class="my-2">
                         <a href="{{href}}" class="btn btn-primary">{{name}}</a>
                     </div>
